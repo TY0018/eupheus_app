@@ -44,7 +44,7 @@ class _RootPageState extends State<RootPage> {
   int currentPage = 0; //created a variable, put before build
   List<Widget> pages = const [
     Explore(),
-    Search(),
+    Search(),  // add other pages when done
   ];
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class _RootPageState extends State<RootPage> {
           title: Text('Eupheus'),
           ),
         body: pages[currentPage],
-        floatingActionButton: FloatingActionButton(
+        floatingActionButton: FloatingActionButton(   // dk if we want to keep
           onPressed: () {},
           child: const Icon(Icons.home),
         ),
