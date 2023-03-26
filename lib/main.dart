@@ -1,12 +1,24 @@
 import 'package:eupheus_app/explore.dart';
+import 'package:eupheus_app/search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  // whenever your initialization is completed, remove the splash screen:
+  FlutterNativeSplash.remove();
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+
+
+// void main() {
+//   runApp(const MyApp());
+// }
+
+class MyApp extends StatelessWidget {  // this widget is the root of your app
   const MyApp({super.key});
 
   @override
@@ -16,7 +28,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false, // remove debug banner
       theme: ThemeData(primarySwatch: Colors.purple),
       home: RootPage(),
-    );
+      );
   }
 }
 
@@ -29,14 +41,18 @@ class RootPage extends StatefulWidget {
 }
 
 class _RootPageState extends State<RootPage> {
-  int currentPage = 0; //created a vairable, put before build
+  int currentPage = 0; //created a variable, put before build
+  List<Widget> pages = const [
+    Explore(),
+    Search(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text('Eupheus'),
           ),
-        body: const Explore(),
+        body: pages[currentPage],
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           child: const Icon(Icons.home),
