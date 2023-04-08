@@ -8,22 +8,17 @@ class Explore extends StatelessWidget {
     return Container(
       width: 100.0,
       child: Column(mainAxisSize: MainAxisSize.min, children: [
-        ToggleButton(icon: Icon(Icons.favorite), icon1: Icon(Icons.favorite_border_outlined)),
-        ToggleButton(icon: Icon(Icons.star), icon1: Icon(Icons.star_border_outlined)),
-        ToggleButton(icon: Icon(Icons.share), icon1: Icon(Icons.share_outlined)),
+        ToggleButton(),
+        Icon(Icons.star, size: 35.0, color: Colors.purple),
+        Icon(Icons.share_outlined, size: 35.0, color: Colors.purple),
       ]),
     );
   }
-  }
-
-
+}
 
 class ToggleButton extends StatefulWidget {
   const ToggleButton(
-      {required this.icon, required this.icon1, super.key});
-
-  final IconData icon;
-  final IconData icon1;
+    {super.key});
 
   @override
   State<ToggleButton> createState() => _ToggleButtonState();
@@ -31,20 +26,18 @@ class ToggleButton extends StatefulWidget {
 
 class _ToggleButtonState extends State<ToggleButton> {
   bool selected = false;
-  IconData get icon => widget.icon;
-  IconData get icon1 => widget.icon1;
-  
+
   @override
   Widget build(BuildContext context) {
-
     return IconButton(
       isSelected: selected,
-      icon: Icon(icon),
-      selectedIcon: Icon(icon1),
-      onPressed: (){setState(() {
-              selected = !selected;
-            });
-            },
+      icon: Icon(Icons.favorite_border_outlined),
+      selectedIcon: Icon(Icons.favorite),
+      onPressed: () {
+        setState(() {
+          selected = !selected;
+        });
+      },
       iconSize: 35.0,
       color: Colors.purple,
     );
