@@ -4,7 +4,31 @@ import 'package:eupheus_app/sustainability.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/painting/rounded_rectangle_border.dart';
 
-const int itemCount = 20;
+int itemCount = topicNames.length;
+var topicNames = {
+  '0': 'Sustainability',
+  '1': 'Astrology', 
+  '2': 'Cooking',
+  '3': 'Psychology',
+  '4': 'Music',
+  '5': 'Social Themes',
+  '6': 'Photography',
+  '7': 'Animation',
+  '8': 'Travel',
+  '9': 'Media',
+  '10': 'Gardening',
+  '11': 'Video Game Design',
+  '12': 'Yoga',
+  '13': 'Meditation',
+  '14': 'Magic',
+  '15': 'Sports',
+  '16': 'Nutrition',
+  '17': 'Film',
+  '18': 'Coding',
+  '19': 'Literature',
+};
+var _gridItems= topicNames.values.toList();
+
 
 class Search extends StatelessWidget {
   const Search({super.key});
@@ -26,7 +50,8 @@ class SearchBar extends StatefulWidget {
 
 class _SearchBarState extends State<SearchBar> {
   final TextEditingController _searchController = TextEditingController();
-  final List _gridItems = List.generate(20, (i) => "Item $i");
+  // final List _gridItems = List.generate(itemCount, (i) => "$topicNames[i].values");
+
 
   @override
   // ignore: dead_code
@@ -52,7 +77,7 @@ class _SearchBarState extends State<SearchBar> {
 
 SliverGrid(
   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-    childAspectRatio: 4.0,
+    childAspectRatio: 1.5,
     crossAxisCount: 2,
     crossAxisSpacing: 20.0,
     mainAxisSpacing: 20.0,
