@@ -3,6 +3,7 @@ import 'package:eupheus_app/search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'dart:math';
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -43,9 +44,9 @@ class _RootPageState extends State<RootPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Eupheus'),
-          ),
+        // appBar: AppBar(
+        //   title: Text('Eupheus'),
+        //   ),
         body: pages[currentPage],
         floatingActionButton: FloatingActionButton(   // dk if we want to keep
           onPressed: () {},
