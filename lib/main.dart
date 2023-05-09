@@ -68,6 +68,7 @@ class _RootPageState extends State<RootPage> {
 
       //original bar
       bottomNavigationBar: NavigationBar(
+        height: 60.0,
         destinations: const [
           NavigationDestination(
               icon: Icon(Icons.explore), label: 'Explore'), //explore page
