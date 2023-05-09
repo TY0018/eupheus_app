@@ -31,10 +31,32 @@ var topicNames = {
   'book': 'Literature',
 };
 
-var _gridIcons = topicNames.keys.toList();
+var topicIcons = {
+  'nature' : Icons.nature,
+  'rocket_launch': Icons.rocket_launch,
+  'dinner_dining': Icons.dinner_dining,
+  'psychology_alt': Icons.psychology_alt,
+  'music_note': Icons.music_note,
+  'location_city': Icons.location_city,
+  'photo_camera': Icons.photo_camera,
+  'animation': Icons.animation,
+  'travel_explore': Icons.travel_explore,
+  'perm_media': Icons.perm_media,
+  'emoji_nature': Icons.emoji_nature,
+  'videogame_asset': Icons.videogame_asset,
+  'emoji_emotions': Icons.emoji_emotions,
+  'self_improvement': Icons.self_improvement,
+  'auto_fix_normal': Icons.auto_fix_normal,
+  'surfing': Icons.surfing,
+  'egg_alt': Icons.egg_alt,
+  'theaters': Icons.theaters,
+  'hevc': Icons.hevc,
+  'book': Icons.book,
+};
+
+// List<IconData> _gridIcons = [];
+
 var _gridTopics = topicNames.values.toList();
-
-
 
 class Search extends StatelessWidget {
   const Search({super.key});
@@ -54,16 +76,15 @@ class SearchBar extends StatefulWidget {
 
 class _SearchBarState extends State<SearchBar> {
   final TextEditingController _searchController = TextEditingController();
-  List<IconData> _topicIcons = []; 
+  // List<IconData> _topicIcons = []; 
   
   // final List _gridItems = List.generate(itemCount, (i) => "$topicNames[i].values");
 
   @override
   // ignore: dead_code
   Widget build(BuildContext context) {
-    for (int i = 0; i < itemCount; i++) {
-    _topicIcons.add(String2Icon.getIconDataFromString(_gridIcons[i]) as IconData);}
-    print(_topicIcons);
+    // for (int i = 0; i < itemCount; i++) {
+    //   _topicIcons.add(String2Icon.getIconDataFromString(_gridIcons[i]) as IconData);}
     return CustomScrollView(slivers: [
       // Add a floating search bar to the app
       SliverAppBar(
@@ -74,7 +95,7 @@ class _SearchBarState extends State<SearchBar> {
         title: TextField(
           controller: _searchController,
           decoration: InputDecoration(
-            hintText: 'Search...',
+            hintText: 'Exploring next...',
   
             hintStyle: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w500, color:Colors.white),
             // Add a clear button to the search bar
@@ -93,17 +114,17 @@ class _SearchBarState extends State<SearchBar> {
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           childAspectRatio: 1.5,
           crossAxisCount: 2,
-          crossAxisSpacing: 20.0,
+          crossAxisSpacing: 15.0,
           mainAxisSpacing: 20.0,
         ),
         delegate: SliverChildBuilderDelegate(
           (context, index) {
             return Card(
               color: Color((math.Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(0.6),
-              child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [Icon(_topicIcons[index]), Text(_gridTopics[index],
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [Icon(topicIcons.values.elementAt(index)), Text(_gridTopics[index],
                     style: TextStyle(
                         fontFamily: 'Nunito',
-                        fontSize: 18.0,
+                        fontSize: 16.0,
                         fontWeight: FontWeight.w700))],
               ),
             );
