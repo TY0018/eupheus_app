@@ -64,52 +64,7 @@ class _RootPageState extends State<RootPage> {
     return Scaffold(
       body: pages[currentPage],
 
-// return CupertinoTabScaffold(
-//   // 2 <-- SEE HERE
-//   tabBar: CupertinoTabBar(
-//     currentIndex: 0,
-//     items: const <BottomNavigationBarItem>[
-//       // 3 <-- SEE HERE
-//       BottomNavigationBarItem(
-//           icon: Icon(Icons.explore), label: 'Explore'),
-//       BottomNavigationBarItem(
-//           icon: Icon(Icons.search), label: 'Search'),
-//       BottomNavigationBarItem(
-//           icon: Icon(Icons.groups), label: 'Community'),
-//       BottomNavigationBarItem(
-//           icon: Icon(Icons.sports_esports), label: 'Games'),
-//       BottomNavigationBarItem(
-//           icon: Icon(Icons.face), label: 'Me')
-//       //   ],),
-//     ],
-//   ),
-//   tabBuilder: (context, index) {
-//     late final CupertinoTabView returnValue;
-//     switch (index) {
-//       case 0:
-//         // 4 <-- SEE HERE
-//         returnValue = CupertinoTabView(builder: (context) {
-//           return currentPage;
-//         });
-//         break;
-//       case 1:
-//         returnValue = CupertinoTabView(
-//           builder: (context) {
-//             return CupertinoChatPage();
-//           },
-//         );
-//         break;
-//       case 2:
-//         returnValue = CupertinoTabView(
-//           builder: (context) {
-//             return CupertinoSettingsPage();
-//           },
-//         );
-//         break;
-//     }
-//     return returnValue;
-//   },
-// );
+
 
       //original bar
       bottomNavigationBar: NavigationBar(
@@ -134,29 +89,7 @@ class _RootPageState extends State<RootPage> {
         labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
       ),
 
-      // NavigationBarItem
-      // bottomNavigationBar: BottomNavigationBar(
-      //   items: const <BottomNavigationBarItem>[
-      //     BottomNavigationBarItem(
-      //         icon: Icon(Icons.explore), label: 'Explore'), //explore page
-      //     BottomNavigationBarItem(
-      //         icon: Icon(Icons.search), label: 'Search'), //search page
-      //     BottomNavigationBarItem(icon: Icon(Icons.groups), label: 'Community'),
-      //     BottomNavigationBarItem(
-      //         icon: Icon(Icons.sports_esports), label: 'Games'),
-      //     BottomNavigationBarItem(icon: Icon(Icons.face), label: 'Me'),
-      //   ],
-      //   : (int index) {
-      //     setState(() {
-      //       currentPage = index;
-      //     });
-      //   },
-      //   selectedIndex: currentPage,
-      //   backgroundColor: '#8C84EE'.toColor(),
-      //   currentIndex: _selectedIndex,
-      //   selectedItemColor: Colors.white,
-      //   onTap: _onItemTapped,
-      // ),
+      
     );
   }
 }
