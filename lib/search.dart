@@ -1,11 +1,11 @@
 import 'dart:math' as math;
 import 'dart:core';
-import 'package:string_2_icon/string_2_icon.dart';
-import 'dart:ui';
+
+
 import 'package:eupheus_app/extensions.dart';
 import 'package:eupheus_app/sustainability.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/painting/rounded_rectangle_border.dart';
+
 
 int itemCount = topicNames.length;
 var topicNames = {
@@ -54,7 +54,7 @@ var topicIcons = {
   'book': Icons.book,
 };
 
-// List<IconData> _gridIcons = [];
+
 
 var _gridTopics = topicNames.values.toList();
 
@@ -76,15 +76,11 @@ class SearchBar extends StatefulWidget {
 
 class _SearchBarState extends State<SearchBar> {
   final TextEditingController _searchController = TextEditingController();
-  // List<IconData> _topicIcons = []; 
   
-  // final List _gridItems = List.generate(itemCount, (i) => "$topicNames[i].values");
 
   @override
-  // ignore: dead_code
+
   Widget build(BuildContext context) {
-    // for (int i = 0; i < itemCount; i++) {
-    //   _topicIcons.add(String2Icon.getIconDataFromString(_gridIcons[i]) as IconData);}
     return CustomScrollView(slivers: [
       // Add a floating search bar to the app
       SliverAppBar(
@@ -132,86 +128,8 @@ class _SearchBarState extends State<SearchBar> {
           childCount: itemCount,
         ),
       ),
-      // scrollDirection: Axis.vertical,
-      // itemCount: itemCount,
-      // itemBuilder: (BuildContext context, int index) {
-      //   return ListTile(
-      //     title: Text('Item ${(index + 1)}'), // to change to actual topics
-      //     leading: const Icon(Icons.nature),
-      //     tileColor: Color.fromARGB(238, 235, 234, 198),
-      //     shape: CustomRoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-      //     onTap: () {
-      //       debugPrint("enter topic widget");
-      //     },
-      //   );
-      // },
     ]);
   }}
 
 
-// child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [Icon(_topicIcons[index]), Text(_gridTopics[index],
-//                     style: TextStyle(
-//                         fontFamily: 'Nunito',
-//                         fontSize: 18.0,
-//                         fontWeight: FontWeight.w700))],
-//               ),
-//             );
 
-// delegate: SliverChildBuilderDelegate(
-//           (context, index) {
-//             return Card(
-//               color: Color((math.Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(0.6),
-//               child: Container(
-//                 alignment: Alignment.center,
-//                 padding: EdgeInsets.all(7.0),
-//                 child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [Icon(_topicIcons[index]), Text(_gridTopics[index],
-//                     style: TextStyle(
-//                         fontFamily: 'Nunito',
-//                         fontSize: 18.0,
-//                         fontWeight: FontWeight.w700))],
-//               ),
-//             ));
-//           },
-//           childCount: itemCount,
-//         ),
-// child: Row(children: <Widget>[ListTile(leading: Icon(_topicIcons[index]), title: Text(_gridTopics[index],
-//                     style: TextStyle(
-//                         fontFamily: 'Nunito',
-//                         fontSize: 18.0,
-//                         fontWeight: FontWeight.w700)), contentPadding: EdgeInsets.all(7.0),)],
-//               ),
-
-// GridView.builder(
-//         key:key,
-//         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-//           crossAxisCount: 2,
-//           crossAxisSpacing: 20.0,
-//           mainAxisSpacing: 20.0,
-//         ),
-//         scrollDirection: Axis.vertical,
-//         itemCount: itemCount,
-//         itemBuilder: (BuildContext context, int index) {
-//           return ListTile(
-//             title: Text('Item ${(index + 1)}'), // to change to actual topics
-//             leading: const Icon(Icons.nature),
-//             tileColor: Color.fromARGB(238, 235, 234, 198),
-//             shape: CustomRoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-//             onTap: () {
-//               debugPrint("enter topic widget");
-//             },
-//           );
-//         },
-//       )
-
-// class CustomRoundedRectangleBorder extends RoundedRectangleBorder {
-//   const CustomRoundedRectangleBorder({
-//     side = BorderSide.none,
-//     borderRadius = BorderRadius.zero,
-//   }) : super(side: side, borderRadius: borderRadius);
-
-//   @override
-//   Path getOuterPath(Rect rect, {TextDirection? textDirection}) {
-//     return Path()
-//       ..addRRect(borderRadius.resolve(textDirection).toRRect(rect));
-//   }
-// }
