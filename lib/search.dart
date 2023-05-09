@@ -88,7 +88,7 @@ class _SearchBarState extends State<SearchBar> {
     return CustomScrollView(slivers: [
       // Add a floating search bar to the app
       SliverAppBar(
-        floating: true,
+        pinned: true,
         backgroundColor:'#8C84EE'.toColor(),
         leading: Icon(Icons.search),
         // Use a Material design search bar
