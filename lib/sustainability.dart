@@ -7,7 +7,7 @@ class SustainabilityPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold( // gives white 'canvas' page
       appBar: AppBar(
-        title: const Text('Sustainability')
+        title: const Text('Sustainability'),
         automaticallyImplyLeading: false, // removes the auto back button
         leading: IconButton(onPressed: (){
           Navigator.of(context).pop(); // pop means delete the page
