@@ -1,5 +1,5 @@
 import 'dart:ui';
-
+import 'package:flutter/cupertino.dart';
 import 'package:eupheus_app/explore.dart';
 import 'package:eupheus_app/search.dart';
 import 'package:eupheus_app/extensions.dart';
@@ -62,15 +62,56 @@ class _RootPageState extends State<RootPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text('Eupheus'),
-      //   ),
       body: pages[currentPage],
-      // floatingActionButton: FloatingActionButton(
-      //   // dk if we want to keep
-      //   onPressed: () {},
-      //   child: const Icon(Icons.home),
-      // ),
+
+// return CupertinoTabScaffold(
+//   // 2 <-- SEE HERE
+//   tabBar: CupertinoTabBar(
+//     currentIndex: 0,
+//     items: const <BottomNavigationBarItem>[
+//       // 3 <-- SEE HERE
+//       BottomNavigationBarItem(
+//           icon: Icon(Icons.explore), label: 'Explore'),
+//       BottomNavigationBarItem(
+//           icon: Icon(Icons.search), label: 'Search'),
+//       BottomNavigationBarItem(
+//           icon: Icon(Icons.groups), label: 'Community'),
+//       BottomNavigationBarItem(
+//           icon: Icon(Icons.sports_esports), label: 'Games'),
+//       BottomNavigationBarItem(
+//           icon: Icon(Icons.face), label: 'Me')
+//       //   ],),
+//     ],
+//   ),
+//   tabBuilder: (context, index) {
+//     late final CupertinoTabView returnValue;
+//     switch (index) {
+//       case 0:
+//         // 4 <-- SEE HERE
+//         returnValue = CupertinoTabView(builder: (context) {
+//           return currentPage;
+//         });
+//         break;
+//       case 1:
+//         returnValue = CupertinoTabView(
+//           builder: (context) {
+//             return CupertinoChatPage();
+//           },
+//         );
+//         break;
+//       case 2:
+//         returnValue = CupertinoTabView(
+//           builder: (context) {
+//             return CupertinoSettingsPage();
+//           },
+//         );
+//         break;
+//     }
+//     return returnValue;
+//   },
+// );
+
+      //original bar
       bottomNavigationBar: NavigationBar(
         destinations: const [
           NavigationDestination(
@@ -88,8 +129,12 @@ class _RootPageState extends State<RootPage> {
         },
         selectedIndex: currentPage,
         backgroundColor: '#8C84EE'.toColor(),
-
+        indicatorColor: Colors.white,
+        animationDuration: const Duration(seconds: 3),
+        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
       ),
+
+      // NavigationBarItem
       // bottomNavigationBar: BottomNavigationBar(
       //   items: const <BottomNavigationBarItem>[
       //     BottomNavigationBarItem(
