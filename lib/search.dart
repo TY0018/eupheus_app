@@ -1,4 +1,6 @@
-import 'dart:math';
+import 'dart:math' as math;
+import 'dart:core';
+import 'package:string_2_icon/string_2_icon.dart';
 import 'dart:ui';
 import 'package:eupheus_app/extensions.dart';
 import 'package:eupheus_app/sustainability.dart';
@@ -7,35 +9,39 @@ import 'package:flutter/src/painting/rounded_rectangle_border.dart';
 
 int itemCount = topicNames.length;
 var topicNames = {
-  '0': 'Sustainability',
-  '1': 'Astrology',
-  '2': 'Cooking',
-  '3': 'Psychology',
-  '4': 'Music',
-  '5': 'Social Themes',
-  '6': 'Photography',
-  '7': 'Animation',
-  '8': 'Travel',
-  '9': 'Media',
-  '10': 'Gardening',
-  '11': 'Video Game Design',
-  '12': 'Yoga',
-  '13': 'Meditation',
-  '14': 'Magic',
-  '15': 'Sports',
-  '16': 'Nutrition',
-  '17': 'Film',
-  '18': 'Coding',
-  '19': 'Literature',
+  'nature' : 'Sustainability',
+  'rocket_launch': 'Astrology',
+  'dinner_dining': 'Cooking',
+  'psychology_alt': 'Psychology',
+  'music_note': 'Music',
+  'location_city': 'Social Themes',
+  'photo_camera': 'Photography',
+  'animation': 'Animation',
+  'travel_explore': 'Travel',
+  'perm_media': 'Media',
+  'emoji_nature': 'Gardening',
+  'videogame_asset': 'Video Game Design',
+  'emoji_emotions': 'Comedy',
+  'self_improvement': 'Meditation',
+  'auto_fix_normal': 'Magic',
+  'surfing': 'Surfing',
+  'egg_alt': 'Nutrition',
+  'theaters': 'Film',
+  'hevc': 'Coding',
+  'book': 'Literature',
 };
-var _gridItems = topicNames.values.toList();
+
+var _gridIcons = topicNames.keys.toList();
+var _gridTopics = topicNames.values.toList();
+
+
 
 class Search extends StatelessWidget {
   const Search({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(child: SearchBar());
+    return SearchBar();
   }
 }
 
@@ -48,11 +54,16 @@ class SearchBar extends StatefulWidget {
 
 class _SearchBarState extends State<SearchBar> {
   final TextEditingController _searchController = TextEditingController();
+  List<IconData> _topicIcons = []; 
+  
   // final List _gridItems = List.generate(itemCount, (i) => "$topicNames[i].values");
 
   @override
   // ignore: dead_code
   Widget build(BuildContext context) {
+    for (int i = 0; i < itemCount; i++) {
+    _topicIcons.add(String2Icon.getIconDataFromString(_gridIcons[i]) as IconData);}
+    print(_topicIcons);
     return CustomScrollView(slivers: [
       // Add a floating search bar to the app
       SliverAppBar(
@@ -88,19 +99,16 @@ class _SearchBarState extends State<SearchBar> {
         delegate: SliverChildBuilderDelegate(
           (context, index) {
             return Card(
-              // generate blues with random shades
-              color: Colors.amber[Random().nextInt(9) * 100],
-              child: Container(
-                alignment: Alignment.center,
-                child: Text(_gridItems[index],
+              color: Color((math.Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(0.6),
+              child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [Icon(_topicIcons[index]), Text(_gridTopics[index],
                     style: TextStyle(
                         fontFamily: 'Nunito',
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.w700)),
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w700))],
               ),
             );
           },
-          childCount: _gridItems.length,
+          childCount: itemCount,
         ),
       ),
       // scrollDirection: Axis.vertical,
@@ -117,9 +125,40 @@ class _SearchBarState extends State<SearchBar> {
       //   );
       // },
     ]);
-  }
-}
+  }}
 
+
+// child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [Icon(_topicIcons[index]), Text(_gridTopics[index],
+//                     style: TextStyle(
+//                         fontFamily: 'Nunito',
+//                         fontSize: 18.0,
+//                         fontWeight: FontWeight.w700))],
+//               ),
+//             );
+
+// delegate: SliverChildBuilderDelegate(
+//           (context, index) {
+//             return Card(
+//               color: Color((math.Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(0.6),
+//               child: Container(
+//                 alignment: Alignment.center,
+//                 padding: EdgeInsets.all(7.0),
+//                 child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [Icon(_topicIcons[index]), Text(_gridTopics[index],
+//                     style: TextStyle(
+//                         fontFamily: 'Nunito',
+//                         fontSize: 18.0,
+//                         fontWeight: FontWeight.w700))],
+//               ),
+//             ));
+//           },
+//           childCount: itemCount,
+//         ),
+// child: Row(children: <Widget>[ListTile(leading: Icon(_topicIcons[index]), title: Text(_gridTopics[index],
+//                     style: TextStyle(
+//                         fontFamily: 'Nunito',
+//                         fontSize: 18.0,
+//                         fontWeight: FontWeight.w700)), contentPadding: EdgeInsets.all(7.0),)],
+//               ),
 
 // GridView.builder(
 //         key:key,
