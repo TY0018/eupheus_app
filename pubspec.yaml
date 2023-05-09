@@ -38,6 +38,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_native_splash: ^2.2.19
   string_2_icon: ^0.0.2
+  autocomplete_textfield: ^1.6.4
 
 dev_dependencies:
   flutter_test:
