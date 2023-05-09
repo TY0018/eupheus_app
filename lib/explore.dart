@@ -1,3 +1,4 @@
+import 'package:eupheus_app/extensions.dart';
 import 'package:flutter/material.dart';
 
 class Explore extends StatelessWidget {
@@ -9,8 +10,8 @@ class Explore extends StatelessWidget {
       width: 100.0,
       child: Column(mainAxisSize: MainAxisSize.min, children: [
         ToggleButton(),
-        Icon(Icons.star, size: 35.0, color: Colors.purple),
-        Icon(Icons.share_outlined, size: 35.0, color: Colors.purple),
+        Icon(Icons.star, size: 35.0, color: '#8C84EE'.toColor()),
+        Icon(Icons.share_outlined, size: 35.0, color: '#8C84EE'.toColor()),
       ]),
     );
   }
@@ -39,7 +40,7 @@ class _ToggleButtonState extends State<ToggleButton> {
         });
       },
       iconSize: 35.0,
-      color: Colors.purple,
+      color:'#8C84EE'.toColor(),
     );
   }
 }
