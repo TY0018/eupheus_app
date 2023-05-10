@@ -53,7 +53,7 @@ class _RootPageState extends State<RootPage> {
   List<Widget> pages = const [
     Explore(),
     Search(),
-    myAccount(), // add other pages when done
+    MyAccount(), // add other pages when done
   ];
   static const TextStyle optionStyle =
       TextStyle(fontSize: 10.0, fontWeight: FontWeight.w300);
