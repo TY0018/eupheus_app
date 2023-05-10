@@ -130,7 +130,8 @@ class MyAccount extends StatelessWidget {
                 
               ])),
               Card(color: '#FFF7E4'.toColor(),
-              child: Column(children: [SizedBox(height:8.0), Text("My Plans"), 
+              child: Column(children: [SizedBox(height:8.0), Text("My Plans", style: TextStyle(color: Theme.of(context).primaryColor,
+                            fontSize: 20, fontWeight: FontWeight.w700)), 
               OutlinedButton(
                         onPressed: () {},
                         child: Row(children: [
