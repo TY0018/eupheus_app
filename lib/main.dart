@@ -1,12 +1,9 @@
-import 'dart:ui';
-import 'package:flutter/cupertino.dart';
+import 'package:eupheus_app/me.dart';
 import 'package:eupheus_app/explore.dart';
 import 'package:eupheus_app/search.dart';
 import 'package:eupheus_app/extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'dart:math';
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -55,7 +52,8 @@ class _RootPageState extends State<RootPage> {
   int currentPage = 0; //created a variable, put before build
   List<Widget> pages = const [
     Explore(),
-    Search(), // add other pages when done
+    Search(),
+    myAccount(), // add other pages when done
   ];
   static const TextStyle optionStyle =
       TextStyle(fontSize: 10.0, fontWeight: FontWeight.w300);

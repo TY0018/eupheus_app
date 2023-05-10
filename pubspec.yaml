@@ -73,6 +73,8 @@ flutter:
     - aivideos/CPF_eupheus.mp4
     - aivideos/CulturalDiversity_eupheus.mp4
     - images/eupheus_splashscreen.png
+    - images/eupheusLogo_large.png
+    - images/eupheus_avatar.jpg
   
   #   - images/a_dot_ham.jpeg
 

@@ -10,12 +10,6 @@ class Explore extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [VideoCS(),
-          // user post (at the very back)
-          // Container(
-          //   color: Colors.deepPurple[300],
-          // ),
-
-          // user name and caption
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Container(
@@ -40,7 +34,7 @@ class Explore extends StatelessWidget {
                             style: TextStyle(color: Colors.black)),
                             
                         TextSpan(
-                            text: ' #Sustainability #CulturePreservation',
+                            text: '\n#Sustainability #CulturePreservation',
                             style: TextStyle(
                                 fontWeight: FontWeight.w300,
                                 fontStyle: FontStyle.italic,
@@ -62,16 +56,16 @@ class Explore extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Icon(Icons.favorite, size: 25.0, color: '#8C84EE'.toColor()),
-                  SizedBox(height: 8),
+                  SizedBox(height: 5),
                   Text("30k"),
-                  SizedBox(height: 15),
+                  SizedBox(height: 10),
                   Icon(Icons.star, size: 25.0, color: '#8C84EE'.toColor()),
-                  SizedBox(height: 8),
+                  SizedBox(height: 5),
                   Text("25k"),
-                  SizedBox(height: 15),
+                  SizedBox(height: 10),
                   Icon(Icons.share_outlined,
                       size: 25.0, color: '#8C84EE'.toColor()),
-                  SizedBox(height: 8),
+                  SizedBox(height: 5),
                   Text("10k"),
                 ],
               ),
