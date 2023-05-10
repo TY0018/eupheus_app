@@ -1,15 +1,14 @@
 import 'dart:math' as math;
 import 'dart:core';
-
-
 import 'package:eupheus_app/extensions.dart';
-import 'package:eupheus_app/sustainability.dart';
+import 'package:eupheus_app/cryptocurrency.dart';
 import 'package:flutter/material.dart';
 
 
 int itemCount = topicNames.length;
 var topicNames = {
-  'nature' : 'Sustainability',
+  'attach_money': 'Cryptocurrency',
+  'nature': 'Sustainability',
   'rocket_launch': 'Astrology',
   'dinner_dining': 'Cooking',
   'psychology_alt': 'Psychology',
@@ -24,7 +23,6 @@ var topicNames = {
   'emoji_emotions': 'Comedy',
   'self_improvement': 'Meditation',
   'auto_fix_normal': 'Magic',
-  'attach_money': 'Cryptocurrency',
   'egg_alt': 'Nutrition',
   'theaters': 'Film',
   'hevc': 'Coding',
@@ -32,6 +30,7 @@ var topicNames = {
 };
 
 var topicIcons = {
+  'attach_money': Icons.attach_money,
   'nature' : Icons.nature,
   'rocket_launch': Icons.rocket_launch,
   'dinner_dining': Icons.dinner_dining,
@@ -47,7 +46,6 @@ var topicIcons = {
   'emoji_emotions': Icons.emoji_emotions,
   'self_improvement': Icons.self_improvement,
   'auto_fix_normal': Icons.auto_fix_normal,
-  'attach_money': Icons.attach_money,
   'egg_alt': Icons.egg_alt,
   'theaters': Icons.theaters,
   'hevc': Icons.hevc,
@@ -74,12 +72,15 @@ class SearchBar extends StatefulWidget {
 
 class _SearchBarState extends State<SearchBar> {
   final TextEditingController _searchController = TextEditingController();
-  
+  List<Widget> pages = const [
+    CryptocurrencyPage(), // add other pages when done
+  ];  
 
   @override
 
   Widget build(BuildContext context) {
-    return CustomScrollView(slivers: [
+    return Scaffold(
+    body: CustomScrollView(slivers: [
       // Add a floating search bar to the app
       SliverAppBar(
         pinned: true,
@@ -117,7 +118,10 @@ class _SearchBarState extends State<SearchBar> {
             return Container(
               margin:EdgeInsets.all(8.0),
               child: ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: (){
+                Navigator.push(context, 
+                MaterialPageRoute(builder: (context) => const CryptocurrencyPage()));
+              },
               style: ElevatedButton.styleFrom(backgroundColor: Color((math.Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(0.6)),
               icon: Icon(topicIcons.values.elementAt(index)), 
               label: Text(_gridTopics[index],
@@ -131,7 +135,7 @@ class _SearchBarState extends State<SearchBar> {
           childCount: itemCount,
         ),
       ),
-    ]);
+    ]));
   }}
 
 

@@ -64,9 +64,6 @@ class _RootPageState extends State<RootPage> {
     return Scaffold(
       body: pages[currentPage],
 
-
-
-      //original bar
       bottomNavigationBar: NavigationBar(
         height: 60.0,
         destinations: const [
