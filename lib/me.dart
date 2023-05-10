@@ -3,10 +3,11 @@ import 'package:eupheus_app/extensions.dart';
 
 class MyAccount extends StatelessWidget {
   const MyAccount({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(slivers: [
+    return CustomScrollView(
+      slivers: [
       // Add a floating search bar to the app
       SliverAppBar(
           centerTitle: true,
@@ -90,12 +91,17 @@ class MyAccount extends StatelessWidget {
                       ]),
                 ]),
                 Card(
+                  color:'#FFF7E4'.toColor(), 
+                    elevation: 4.0,
                     child: Column(
+                      
                   children: [
+                    SizedBox(height: 8.0),
                     Text("My Journey",
-                        style: TextStyle(
+                        style: TextStyle(color: Theme.of(context).primaryColor,
                             fontSize: 20, fontWeight: FontWeight.w700)),
-                    OutlinedButton(
+                    Container(padding: EdgeInsets.all(8.0),
+                    child: Column(children: [OutlinedButton(
                         onPressed: () {},
                         child: Row(children: [
                           Icon(Icons.calendar_month),
@@ -121,11 +127,64 @@ class MyAccount extends StatelessWidget {
                         ]))
                   ],
                 )),
-                Card(child: Text("My Plans")),
-                Card(child: Text("Achievements"))
-              ]));
+                
+              ])),
+              Card(color: '#FFF7E4'.toColor(),
+              child: Column(children: [SizedBox(height:8.0), Text("My Plans"), 
+              OutlinedButton(
+                        onPressed: () {},
+                        child: Row(children: [
+                          Check(),
+                          Text("Watch Behind PTSD")
+                        ])),
+                        OutlinedButton(
+                        onPressed: () {},
+                        child: Row(children: [
+                          Check(),
+                          Text("Watch The Moon Climate")
+                        ]))])),
+                Card(child: Column(children: [SizedBox(height: 8.0), 
+                Text("Achievements")]
+                ))]));
         }, childCount: 1),
       )
     ]);
+  }}
+
+
+class Check extends StatefulWidget {
+  const Check({super.key});
+
+  @override
+  State<Check> createState() => _CheckState();
+}
+
+class _CheckState extends State<Check> {
+  bool isChecked = false;
+
+  @override
+  Widget build(BuildContext context) {
+    Color getColor(Set<MaterialState> states) {
+      const Set<MaterialState> interactiveStates = <MaterialState>{
+        MaterialState.pressed,
+        MaterialState.hovered,
+        MaterialState.focused,
+      };
+      if (states.any(interactiveStates.contains)) {
+        return '#FFA183'.toColor();
+      }
+      return '#8C84EE'.toColor();
+    }
+
+    return Checkbox(
+      checkColor: Colors.white,
+      fillColor: MaterialStateProperty.resolveWith(getColor),
+      value: isChecked,
+      onChanged: (bool? value) {
+        setState(() {
+          isChecked = value!;
+        });
+      },
+    );
   }
 }

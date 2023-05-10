@@ -23,7 +23,8 @@ class MyApp extends StatelessWidget {
       // theme of the app: const js means this thing will nvr change
       debugShowCheckedModeBanner: false, // remove debug banner
       theme: ThemeData(
-          primaryColor: '#8C84EE'.toColor(),
+          primaryColor: '#8C84EE'.toColor(), //purple
+          // primaryColor: '#FFA183'.toColor(), //peach
           scaffoldBackgroundColor: '#FFF7E4'.toColor(),
           fontFamily: 'Nunito',
           textTheme: const TextTheme(
