@@ -38,6 +38,8 @@ class _CommunityState extends State<Community> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      
+
         decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage('images/virtualcommunity.png'), fit: BoxFit.cover),

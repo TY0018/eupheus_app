@@ -98,6 +98,7 @@ class _RootPageState extends State<RootPage> {
         indicatorColor: Colors.white,
         animationDuration: const Duration(seconds: 3),
         labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+        
       ),
 
       
