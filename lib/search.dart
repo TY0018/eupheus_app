@@ -84,7 +84,7 @@ class _SearchBarState extends State<SearchBar> {
       // Add a floating search bar to the app
       SliverAppBar(
         pinned: true,
-        backgroundColor:'#8C84EE'.toColor(),
+        backgroundColor:'FFA183'.toColor(),
         leading: Icon(Icons.search),
         // Use a Material design search bar
         title: TextField(
@@ -110,13 +110,13 @@ class _SearchBarState extends State<SearchBar> {
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           childAspectRatio: 1.5,
           crossAxisCount: 2,
-          crossAxisSpacing: 7.0,
-          mainAxisSpacing: 7.0,
+          crossAxisSpacing: 5.0,
+          mainAxisSpacing: 5.0,
         ),
         delegate: SliverChildBuilderDelegate(
           (context, index) {
             return Container(
-              margin:EdgeInsets.all(8.0),
+              margin:EdgeInsets.all(12.0),
               child: ElevatedButton.icon(
               onPressed: (){
                 Navigator.push(context, 
