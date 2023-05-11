@@ -98,7 +98,7 @@ class SustainabilityPage extends StatelessWidget {
                             style: TextStyle(color: Colors.black)),
                             
                         TextSpan(
-                            text: '\n#Sustainability #SavemyWorld, #Earth',
+                            text: '\n#Sustainability #SavemyWorld #Earth',
                             style: TextStyle(
                                 fontWeight: FontWeight.w300,
                                 fontStyle: FontStyle.italic,
