@@ -28,7 +28,6 @@ var topicIcons = {
 
 class MyAccount extends StatelessWidget {
   const MyAccount({super.key});
-  
 
   @override
   Widget build(BuildContext context) {
@@ -38,12 +37,13 @@ class MyAccount extends StatelessWidget {
             centerTitle: true,
             pinned: true,
             backgroundColor: '#FFA183'.toColor(),
+            leading: Icon(Icons.shopping_cart),
             title: Text('Profile',
                 style: TextStyle(
                     fontWeight: FontWeight.w800,
                     fontSize: 20,
                     color: Colors.white)),
-            actions: <Widget>[Icon(Icons.settings)]),
+            actions: <Widget>[Icon(Icons.settings), SizedBox(width: 8.0)]),
         SliverList(
             delegate: SliverChildBuilderDelegate(
           (context, index) {
@@ -63,10 +63,12 @@ class MyAccount extends StatelessWidget {
                           children: [
                             Text("Julie",
                                 style: TextStyle(
+                                    color: '#8C84EE'.toColor(),
                                     fontWeight: FontWeight.w700,
                                     fontSize: 25.0)),
                             Text("@JulieDiscovers02",
                                 style: TextStyle(
+                                    color: '#8C84EE'.toColor(),
                                     fontWeight: FontWeight.w500,
                                     fontStyle: FontStyle.italic,
                                     fontSize: 18.0))
@@ -130,27 +132,71 @@ class MyAccount extends StatelessWidget {
                               children: [
                                 OutlinedButton(
                                     onPressed: () {},
+                                    style: OutlinedButton.styleFrom(
+                                        foregroundColor: '#8C84EE'.toColor(),
+                                        side: BorderSide(
+                                            color: '#FFA183'.toColor()),
+                                        textStyle: TextStyle(
+                                            fontWeight: FontWeight.w800),
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(16.0)),
+                                        padding: EdgeInsets.all(8.0),
+                                        alignment: Alignment.center),
                                     child: Row(children: [
                                       Icon(Icons.calendar_month),
-                                      Text("7 Days Streak")
+                                      Text(" 7 Days Streak")
                                     ])),
                                 OutlinedButton(
                                     onPressed: () {},
+                                    style: OutlinedButton.styleFrom(
+                                        foregroundColor: '#8C84EE'.toColor(),
+                                        side: BorderSide(
+                                            color: '#FFA183'.toColor()),
+                                        textStyle: TextStyle(
+                                            fontWeight: FontWeight.w800),
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(16.0)),
+                                        padding: EdgeInsets.all(8.0),
+                                        alignment: Alignment.center),
                                     child: Row(children: [
                                       Icon(Icons.video_library),
-                                      Text("89 videos viewed")
+                                      Text(" 89 videos viewed")
                                     ])),
                                 OutlinedButton(
                                     onPressed: () {},
+                                    style: OutlinedButton.styleFrom(
+                                        foregroundColor: '#8C84EE'.toColor(),
+                                        side: BorderSide(
+                                            color: '#FFA183'.toColor()),
+                                        textStyle: TextStyle(
+                                            fontWeight: FontWeight.w800),
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(16.0)),
+                                        padding: EdgeInsets.all(8.0),
+                                        alignment: Alignment.center),
                                     child: Row(children: [
                                       Icon(Icons.shield),
-                                      Text("2 challenges completed")
+                                      Text(" 2 challenges completed")
                                     ])),
                                 OutlinedButton(
                                     onPressed: () {},
+                                    style: OutlinedButton.styleFrom(
+                                        foregroundColor: '#8C84EE'.toColor(),
+                                        side: BorderSide(
+                                            color: '#FFA183'.toColor()),
+                                        textStyle: TextStyle(
+                                            fontWeight: FontWeight.w800),
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(16.0)),
+                                        padding: EdgeInsets.all(8.0),
+                                        alignment: Alignment.center),
                                     child: Row(children: [
                                       Icon(Icons.military_tech),
-                                      Text("5 badges earned")
+                                      Text(" 5 badges earned")
                                     ]))
                               ],
                             )),
@@ -159,46 +205,73 @@ class MyAccount extends StatelessWidget {
                       color: '#FFF7E4'.toColor(),
                       child: Column(children: [
                         SizedBox(height: 8.0),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text("My Plans",
-                                  style: TextStyle(
-                                      color: Theme.of(context).primaryColor,
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w700)),
-                              IconButton(
-                                  alignment: AlignmentDirectional(30.0, 0),
-                                  color: '#8C84EE'.toColor(),
-                                  icon: Icon(Icons.keyboard_double_arrow_right),
-                                  onPressed: () {})
-                            ]),
+                        Text("My Plans",
+                            style: TextStyle(
+                                color: Theme.of(context).primaryColor,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w700)),
+                        SizedBox(height: 8.0),
                         OutlinedButton(
                             onPressed: () {},
+                            style: OutlinedButton.styleFrom(
+                                foregroundColor: '#8C84EE'.toColor(),
+                                side: BorderSide(color: '#FFA183'.toColor()),
+                                textStyle:
+                                    TextStyle(fontWeight: FontWeight.w800),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(16.0)),
+                                padding: EdgeInsets.all(8.0),
+                                alignment: Alignment.center),
                             child: Row(children: [
                               Check(),
-                              Text("Watch Behind PTSD")
+                              Text("Watch "),
+                              Text("Behind PTSD",
+                                  style: TextStyle(fontStyle: FontStyle.italic))
                             ])),
                         OutlinedButton(
                             onPressed: () {},
+                            style: OutlinedButton.styleFrom(
+                                foregroundColor: '#8C84EE'.toColor(),
+                                side: BorderSide(color: '#FFA183'.toColor()),
+                                textStyle:
+                                    TextStyle(fontWeight: FontWeight.w800),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(16.0)),
+                                padding: EdgeInsets.all(8.0),
+                                alignment: Alignment.center),
                             child: Row(children: [
                               Check(),
-                              Text("Watch The Moon Climate")
-                            ]))
+                              Text("Watch "),
+                              Text("The Moon Climate",
+                                  style: TextStyle(fontStyle: FontStyle.italic))
+                            ])),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text("See more",
+                                style: TextStyle(
+                                    color: '#FFA183'.toColor(),
+                                    fontWeight: FontWeight.w700)),
+                            IconButton(
+                                color: '#FFA183'.toColor(),
+                                icon: Icon(Icons.keyboard_double_arrow_right),
+                                onPressed: () {})
+                          ],
+                        )
                       ])),
                   SizedBox(
-                    width: 400,
-                    child: Card(
-                    color:'#FFF7E4'.toColor(),
-                      child: Column(children: [
-                    SizedBox(height: 8.0),
-                    Text("Achievements",
-                        style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w700)),
-                    SizedBox(height: 8.0)
-                  ])))
+                      width: 400,
+                      child: Card(
+                          color: '#FFF7E4'.toColor(),
+                          child: Column(children: [
+                            SizedBox(height: 8.0),
+                            Text("Achievements",
+                                style: TextStyle(
+                                    color: Theme.of(context).primaryColor,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w700)),
+                            SizedBox(height: 8.0)
+                          ])))
                 ]));
           },
           childCount: 1,
@@ -215,7 +288,7 @@ class MyAccount extends StatelessWidget {
               return Container(
                   decoration: ShapeDecoration(
                       shape: CircleBorder(
-                          side: BorderSide(color: '#FFA183'.toColor()))),
+                          side: BorderSide(color: '#8C84EE'.toColor()))),
                   padding: EdgeInsets.all(6.0),
                   child: IconButton(
                     onPressed: () {},
@@ -261,6 +334,7 @@ class _CheckState extends State<Check> {
     return Checkbox(
       checkColor: Colors.white,
       fillColor: MaterialStateProperty.resolveWith(getColor),
+      shape: RoundedRectangleBorder(side: BorderSide(color: Colors.white)),
       value: isChecked,
       onChanged: (bool? value) {
         setState(() {
