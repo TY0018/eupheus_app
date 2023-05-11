@@ -38,11 +38,13 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_native_splash: ^2.2.19
   string_2_icon: ^0.0.2
-  autocomplete_textfield: ^1.6.4
+  autocomplete_textfield: ^2.0.1
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  video_player:
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -65,6 +67,15 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/EupheusLogo.png
+    - assets/searchresults.json
+    - images/crypto_thumbnail.png
+    - aivideos/Crypto_Eupheus.mp4
+    - aivideos/CPF_eupheus.mp4
+    - aivideos/CulturalDiversity_eupheus.mp4
+    - images/eupheus_splashscreen.png
+    - images/eupheusLogo_large.png
+    - images/eupheus_avatar.JPG
+  
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

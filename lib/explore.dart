@@ -1,5 +1,6 @@
 import 'package:eupheus_app/extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:eupheus_app/explore_video.dart';
 
 class Explore extends StatelessWidget {
   const Explore({super.key});
@@ -8,13 +9,7 @@ class Explore extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        children: [
-          // user post (at the very back)
-          // Container(
-          //   color: Colors.deepPurple[300],
-          // ),
-
-          // user name and caption
+        children: [VideoCS(),
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Container(
@@ -23,7 +18,7 @@ class Explore extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text("Sustainability",
+                  Text("Introduction to Cultural Sustainability",
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 16,
@@ -35,10 +30,11 @@ class Explore extends StatelessWidget {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                            text: "Introduction to Cultural Sustainability",
+                            text: "Topic: Sustainability",
                             style: TextStyle(color: Colors.black)),
+                            
                         TextSpan(
-                            text: ' #Sustainability #CulturePreservation',
+                            text: '\n#Sustainability #CulturePreservation',
                             style: TextStyle(
                                 fontWeight: FontWeight.w300,
                                 fontStyle: FontStyle.italic,
@@ -60,16 +56,16 @@ class Explore extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Icon(Icons.favorite, size: 25.0, color: '#8C84EE'.toColor()),
-                  SizedBox(height: 10),
+                  SizedBox(height: 5),
                   Text("30k"),
-                  SizedBox(height: 20),
-                  Icon(Icons.star, size: 25.0, color: '#8C84EE'.toColor()),
                   SizedBox(height: 10),
+                  Icon(Icons.star, size: 25.0, color: '#8C84EE'.toColor()),
+                  SizedBox(height: 5),
                   Text("25k"),
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
                   Icon(Icons.share_outlined,
                       size: 25.0, color: '#8C84EE'.toColor()),
-                  SizedBox(height: 20),
+                  SizedBox(height: 5),
                   Text("10k"),
                 ],
               ),
