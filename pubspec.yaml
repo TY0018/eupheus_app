@@ -52,6 +52,12 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  flutter_launcher_icons: 0.13.1
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/Eupheus_app_logo.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -75,6 +81,10 @@ flutter:
     - images/eupheus_splashscreen.png
     - images/eupheusLogo_large.png
     - images/eupheus_avatar.JPG
+    - images/Quiz1_logo.png
+    - aivideos/QuizDemo.mp4
+    - aivideos/Sustainability.mp4
+    - images/virtualcommunity.png
   
   #   - images/a_dot_ham.jpeg
 

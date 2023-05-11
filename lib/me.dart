@@ -1,3 +1,4 @@
+import 'package:eupheus_app/myplans.dart';
 import 'package:flutter/material.dart';
 import 'package:eupheus_app/extensions.dart';
 
@@ -96,7 +97,7 @@ class MyAccount extends StatelessWidget {
                                   alignment: Alignment.center),
                               child: Row(children: [
                                 Icon(Icons.add),
-                                Text("Add Friends")
+                                Text(" Add Friends")
                               ])),
                           OutlinedButton(
                               onPressed: () {},
@@ -112,7 +113,7 @@ class MyAccount extends StatelessWidget {
                                   alignment: Alignment.center),
                               child: Row(children: [
                                 Icon(Icons.leaderboard),
-                                Text("Leaderboard")
+                                Text(" Leaderboard")
                               ]))
                         ]),
                   ]),
@@ -255,7 +256,10 @@ class MyAccount extends StatelessWidget {
                             IconButton(
                                 color: '#FFA183'.toColor(),
                                 icon: Icon(Icons.keyboard_double_arrow_right),
-                                onPressed: () {})
+                                onPressed: () {
+                                  Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) => const Myplans()));
+                                })
                           ],
                         )
                       ])),
