@@ -4,7 +4,6 @@ import 'dart:core';
 import 'package:eupheus_app/extensions.dart';
 import 'package:eupheus_app/videoplayer.dart';
 
-
 class CryptocurrencyPage extends StatelessWidget {
   const CryptocurrencyPage({super.key});
 
@@ -32,7 +31,7 @@ class _CryptoState extends State<Crypto> {
           // Add a floating search bar to the app
           SliverAppBar(
             pinned: true,
-            backgroundColor: '#8C84EE'.toColor(),
+            backgroundColor: '#FFA183'.toColor(),
             leading: Icon(Icons.search),
             // Use a Material design search bar
             title: TextField(
@@ -55,7 +54,19 @@ class _CryptoState extends State<Crypto> {
               ),
             ),
           ),
-
+          SliverList(
+              delegate: SliverChildBuilderDelegate(
+            (context, index) {
+              return Container(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text("Cryptocurrency",
+                      style: TextStyle(
+                          color: '#8C84EE'.toColor(),
+                          fontWeight: FontWeight.w700,
+                          fontSize: 25.0)));
+            },
+            childCount: 1,
+          )),
           SliverGrid(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               childAspectRatio: 1.5,
@@ -92,7 +103,7 @@ class _CryptoState extends State<Crypto> {
                           'Introduction to Cryptocurrency',
                           style: TextStyle(
                               fontFamily: 'Nunito',
-                              color: Colors.black,
+                              color: '#8C84EE'.toColor(),
                               fontSize: 12.0,
                               fontWeight: FontWeight.w700),
                         )
