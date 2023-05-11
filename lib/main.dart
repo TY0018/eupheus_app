@@ -4,6 +4,7 @@ import 'package:eupheus_app/search.dart';
 import 'package:eupheus_app/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:eupheus_app/challenges.dart';
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -54,6 +55,7 @@ class _RootPageState extends State<RootPage> {
   List<Widget> pages = const [
     Explore(),
     Search(),
+    Challenges(),
     MyAccount(), // add other pages when done
   ];
   static const TextStyle optionStyle =
