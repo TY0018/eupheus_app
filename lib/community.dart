@@ -40,7 +40,7 @@ class _CommunityState extends State<Community> {
     return Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('images/communitydemo.png'), fit: BoxFit.cover),
+              image: AssetImage('images/virtualcommunity.png'), fit: BoxFit.cover),
         ),
         child: Stack(
           children: [
