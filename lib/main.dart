@@ -23,8 +23,8 @@ class MyApp extends StatelessWidget {
       // theme of the app: const js means this thing will nvr change
       debugShowCheckedModeBanner: false, // remove debug banner
       theme: ThemeData(
-          primaryColor: '#8C84EE'.toColor(), //purple
-          // primaryColor: '#FFA183'.toColor(), //peach
+          // primaryColor: '#8C84EE'.toColor(), //purple
+          primaryColor: '#FFA183'.toColor(), //peach
           scaffoldBackgroundColor: '#FFF7E4'.toColor(),
           fontFamily: 'Nunito',
           textTheme: const TextTheme(
@@ -80,7 +80,7 @@ class _RootPageState extends State<RootPage> {
           });
         },
         selectedIndex: currentPage,
-        backgroundColor: '#8C84EE'.toColor(),
+        backgroundColor: '#FFA183'.toColor(),
         indicatorColor: Colors.white,
         animationDuration: const Duration(seconds: 3),
         labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
