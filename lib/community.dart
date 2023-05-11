@@ -41,8 +41,11 @@ void dispose(){
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Stack(children: [Expanded(child: Image(image:AssetImage('images/communitydemo.png'))), Align(alignment: Alignment.topLeft,child: IconButton(onPressed:() {},
-      icon: Icon(Icons.arrow_back)))],
+      decoration: BoxDecoration(image: DecorationImage(image: AssetImage('images/communitydemo.png'),
+      fit: BoxFit.cover), 
+      ),
+      child: Stack(children: [Align(alignment: Alignment.topLeft,child: IconButton(onPressed:() {},
+      icon: Icon(Icons.arrow_back), color: Colors.white,))],
     ));
   }
 }
