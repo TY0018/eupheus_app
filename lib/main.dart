@@ -1,3 +1,4 @@
+import 'package:eupheus_app/community.dart';
 import 'package:eupheus_app/me.dart';
 import 'package:eupheus_app/explore.dart';
 import 'package:eupheus_app/search.dart';
@@ -5,13 +6,16 @@ import 'package:eupheus_app/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:eupheus_app/challenges.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   // whenever your initialization is completed, remove the splash screen:
   FlutterNativeSplash.remove();
-  runApp(const MyApp());
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((value) => runApp(const MyApp()));
+  // runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -55,6 +59,7 @@ class _RootPageState extends State<RootPage> {
   List<Widget> pages = const [
     Explore(),
     Search(),
+    VirtualCommunity(),
     Challenges(),
     MyAccount(), // add other pages when done
   ];
@@ -77,9 +82,16 @@ class _RootPageState extends State<RootPage> {
           NavigationDestination(icon: Icon(Icons.face), label: 'Me')
         ],
         onDestinationSelected: (int index) {
-          setState(() {
+          if (index != 2) {setState(() {
             currentPage = index;
-          });
+          });}
+          else {
+            currentPage = index;
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => pages[currentPage])
+            );
+          }
+          
         },
         selectedIndex: currentPage,
         backgroundColor: '#FFA183'.toColor(),

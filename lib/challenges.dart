@@ -43,7 +43,8 @@ class Challenges extends StatelessWidget {
                         padding: EdgeInsets.zero,
                         foregroundColor: Colors.transparent,
                         backgroundColor: Colors.transparent,
-                        surfaceTintColor: Colors.transparent,
+
+                        
                       ),
                       child: Align(
                           alignment: Alignment.bottomCenter,
