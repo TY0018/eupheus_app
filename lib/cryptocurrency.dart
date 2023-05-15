@@ -99,13 +99,14 @@ class _CryptoState extends State<Crypto> {
                             child: Image.asset('images/crypto_thumbnail.png'),
                           ),
                         ),
-                        Text(
+                        FittedBox( fit: BoxFit.scaleDown,
+                          child: Text(
                           'Introduction to Cryptocurrency',
                           style: TextStyle(
                               fontFamily: 'Nunito',
                               color: '#8C84EE'.toColor(),
                               fontSize: 12.0,
-                              fontWeight: FontWeight.w700),
+                              fontWeight: FontWeight.w700)),
                         )
                       ],
                     ));
