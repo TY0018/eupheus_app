@@ -9,55 +9,57 @@ class Challenges extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "Challenges",
-            style: TextStyle(fontWeight: FontWeight.w800, fontSize: 20.0),
-          ),
-          backgroundColor: '#FFA183'.toColor(),
-          centerTitle: true,
+      appBar: AppBar(
+        title: Text(
+          "Challenges",
+          style: TextStyle(fontWeight: FontWeight.w800, fontSize: 20.0),
         ),
-        body: Container(
-          padding: EdgeInsets.all(8.0),
-          child: GridView.count(
-              crossAxisCount: 2,
-              crossAxisSpacing: 10.0,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16.0),
-                      image: DecorationImage(
-                          image: AssetImage('images/Quiz1_logo.png'),
-                          fit: BoxFit.cover)),
-                  child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Quiz()));
-                      },
-                      clipBehavior: Clip.antiAlias,
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0)),
-                        padding: EdgeInsets.zero,
-                        foregroundColor: Colors.transparent,
-                        backgroundColor: Colors.transparent,
-
-                        
-                      ),
-                      child: Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Text(
-                            "Week 3 Challenge",
-                            style: TextStyle(
-                                fontFamily: 'Nunito',
-                                color: '#8C84EE'.toColor(),
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.w700),
-                          ))),
+        backgroundColor: '#FFA183'.toColor(),
+        centerTitle: true,
+      ),
+      body: Container(
+        padding: EdgeInsets.all(10.0),
+        child: GridView.count(
+          crossAxisCount: 2,
+          crossAxisSpacing: 12.0,
+          children: [
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Quiz()));
+                },
+                clipBehavior: Clip.antiAlias,
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16.0)),
+                  padding: EdgeInsets.zero,
+                  foregroundColor: Colors.transparent,
+                  backgroundColor: Colors.transparent,
                 ),
-              ]),
-        ));
+                child: Stack(
+                  children: [
+                    Image(
+                        image: AssetImage('images/challenge_logo.png'),
+                        fit: BoxFit.cover,
+                        isAntiAlias: true,
+                        alignment: Alignment.center,
+                        ),
+                    Align(
+                        alignment: Alignment.bottomCenter,
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text("Week 3 Challenge",
+                              style: TextStyle(
+                                  fontFamily: 'Nunito',
+                                  color: '#8C84EE'.toColor(),
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.w700)),
+                        ))
+                  ],
+                ))
+          ],
+        ),
+      ),
+    );
   }
 }
