@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:core';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-import 'package:eupheus_app/extensions.dart';
+import 'package:eupheus/extensions.dart';
 
 class VideoCS extends StatelessWidget {
   const VideoCS({super.key});

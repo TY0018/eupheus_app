@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:eupheus_app/extensions.dart';
-import 'package:eupheus_app/me.dart';
+import 'package:eupheus/extensions.dart';
+import 'package:eupheus/me.dart';
 import 'dart:math' as math;
 
 class Myplans extends StatelessWidget {
@@ -49,10 +49,12 @@ class Myplans extends StatelessWidget {
                                             BorderRadius.circular(16.0)),
                                     padding: EdgeInsets.all(8.0),
                                     alignment: Alignment.center),
-                                child: Row(children: [
+                                child: FittedBox(
+                                      fit: BoxFit.fitWidth,
+                                      child: Row(children: [
                                   Icon(Icons.diversity_3),
-                                  Text(" 2 activities shared with friends")
-                                ])),
+                                  Text(" 2 activities shared with friends")])
+                                )),
                             OutlinedButton(
                                 onPressed: () {},
                                 style: OutlinedButton.styleFrom(
@@ -66,10 +68,12 @@ class Myplans extends StatelessWidget {
                                             BorderRadius.circular(16.0)),
                                     padding: EdgeInsets.all(8.0),
                                     alignment: Alignment.center),
-                                child: Row(children: [
+                                child: FittedBox(
+                                      fit: BoxFit.fitWidth,
+                                      child: Row(children: [
                                   Icon(Icons.add),
                                   Text(" Add Plan")
-                                ]))
+                                ])))
                           ]),
                       Card(
                           elevation: 0.0,
@@ -79,6 +83,7 @@ class Myplans extends StatelessWidget {
                             OutlinedButton(
                                 onPressed: () {},
                                 style: OutlinedButton.styleFrom(
+                                  minimumSize: const Size.fromHeight(50),
                                     foregroundColor: '#8C84EE'.toColor(),
                                     side:
                                         BorderSide(color: '#FFA183'.toColor()),
@@ -88,8 +93,10 @@ class Myplans extends StatelessWidget {
                                         borderRadius:
                                             BorderRadius.circular(16.0)),
                                     padding: EdgeInsets.all(8.0),
-                                    alignment: Alignment.center),
-                                child: Row(children: [
+                                    alignment: Alignment.centerLeft),
+                                child: FittedBox(
+                                      fit: BoxFit.fitWidth,
+                                      child: Row(children: [
                                   Check(),
                                   Icon(Icons.smart_display),
                                   Text(" Watch "),
@@ -101,11 +108,12 @@ class Myplans extends StatelessWidget {
                                     icon: Icon(Icons.group),
                                     alignment: Alignment.centerRight,
                                   )
-                                ])),
+                                ]))),
                             SizedBox(height: 8.0),
                             OutlinedButton(
                                 onPressed: () {},
                                 style: OutlinedButton.styleFrom(
+                                  minimumSize: const Size.fromHeight(50),
                                     foregroundColor: '#8C84EE'.toColor(),
                                     side:
                                         BorderSide(color: '#FFA183'.toColor()),
@@ -115,8 +123,10 @@ class Myplans extends StatelessWidget {
                                         borderRadius:
                                             BorderRadius.circular(16.0)),
                                     padding: EdgeInsets.all(8.0),
-                                    alignment: Alignment.center),
-                                child: Row(children: [
+                                    alignment: Alignment.centerLeft),
+                                child: FittedBox(
+                                      fit: BoxFit.fitWidth,
+                                      child: Row(children: [
                                   Check(),
                                   Icon(Icons.smart_display),
                                   Text(" Watch "),
@@ -128,11 +138,12 @@ class Myplans extends StatelessWidget {
                                     icon: Icon(Icons.group),
                                     alignment: Alignment.centerRight,
                                   )
-                                ])),
+                                ]))),
                             SizedBox(height: 8.0),
                             OutlinedButton(
                                 onPressed: () {},
                                 style: OutlinedButton.styleFrom(
+                                  minimumSize: const Size.fromHeight(50),
                                     foregroundColor: '#8C84EE'.toColor(),
                                     side:
                                         BorderSide(color: '#FFA183'.toColor()),
@@ -142,15 +153,17 @@ class Myplans extends StatelessWidget {
                                         borderRadius:
                                             BorderRadius.circular(16.0)),
                                     padding: EdgeInsets.all(8.0),
-                                    alignment: Alignment.center),
-                                child: Row(children: [
+                                    alignment: Alignment.centerLeft),
+                                child: FittedBox(
+                                      fit: BoxFit.fitWidth,
+                                      child: Row(children: [
                                   Check(),
                                   Icon(Icons.smart_display),
                                   Text(" Watch "),
                                   Text("The Moon Climate",
                                       style: TextStyle(
                                           fontStyle: FontStyle.italic))
-                                ])),
+                                ]))),
                             SizedBox(height: 8.0),
                           ])),
                     ],

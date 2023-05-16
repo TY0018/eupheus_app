@@ -1,11 +1,11 @@
-import 'package:eupheus_app/community.dart';
-import 'package:eupheus_app/me.dart';
-import 'package:eupheus_app/explore.dart';
-import 'package:eupheus_app/search.dart';
-import 'package:eupheus_app/extensions.dart';
+import 'package:eupheus/community.dart';
+import 'package:eupheus/me.dart';
+import 'package:eupheus/explore.dart';
+import 'package:eupheus/search.dart';
+import 'package:eupheus/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:eupheus_app/challenges.dart';
+import 'package:eupheus/challenges.dart';
 import 'package:flutter/services.dart';
 
 void main() {
@@ -13,9 +13,9 @@ void main() {
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   // whenever your initialization is completed, remove the splash screen:
   FlutterNativeSplash.remove();
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
-      .then((value) => runApp(const MyApp()));
-  // runApp(const MyApp());
+  // SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+  //     .then((value) => runApp(const MyApp()));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

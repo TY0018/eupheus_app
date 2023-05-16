@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'dart:core';
-import 'package:eupheus_app/extensions.dart';
-import 'package:eupheus_app/videoplayer.dart';
+import 'package:eupheus/extensions.dart';
+import 'package:eupheus/videoplayer.dart';
 
 class CryptocurrencyPage extends StatelessWidget {
   const CryptocurrencyPage({super.key});
@@ -58,11 +58,11 @@ class _CryptoState extends State<Crypto> {
               delegate: SliverChildBuilderDelegate(
             (context, index) {
               return Container(
-                  padding: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(12.0),
                   child: Text("Cryptocurrency",
                       style: TextStyle(
                           color: '#8C84EE'.toColor(),
-                          fontWeight: FontWeight.w700,
+                          fontWeight: FontWeight.w800,
                           fontSize: 25.0)));
             },
             childCount: 1,
@@ -77,13 +77,12 @@ class _CryptoState extends State<Crypto> {
             delegate: SliverChildBuilderDelegate(
               (context, index) {
                 return Container(
-                    height: 200.0,
+                  
+                  padding: EdgeInsets.all(8.0),
                     margin: EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        SizedBox(
-                          height: 100,
-                          child: ElevatedButton(
+                      ElevatedButton(
                             onPressed: () {
                               Navigator.push(
                                   context,
@@ -92,23 +91,31 @@ class _CryptoState extends State<Crypto> {
                             },
                             clipBehavior: Clip.antiAlias,
                             style: ElevatedButton.styleFrom(
+                              // minimumSize: Size.fromHeight(50),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(16.0)),
                               padding: EdgeInsets.zero,
+                              foregroundColor: Colors.transparent,
+                              backgroundColor: Colors.transparent
                             ),
-                            child: Image.asset('images/crypto_thumbnail.png'),
+                            child: Image.asset('images/crypto_thumbnail.png',
+                            isAntiAlias: true,
+                            width: double.infinity,
+                            // height: double.infinity,
+                            fit: BoxFit.cover),
                           ),
-                        ),
-                        Text(
+                        
+                        FittedBox( fit: BoxFit.scaleDown,
+                          child: Text(
                           'Introduction to Cryptocurrency',
                           style: TextStyle(
                               fontFamily: 'Nunito',
                               color: '#8C84EE'.toColor(),
-                              fontSize: 12.0,
-                              fontWeight: FontWeight.w700),
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.w700)),
                         )
                       ],
-                    ));
+    ));
               },
               childCount: 1,
             ),

@@ -1,7 +1,7 @@
 import 'dart:math' as math;
 import 'dart:core';
-import 'package:eupheus_app/extensions.dart';
-import 'package:eupheus_app/cryptocurrency.dart';
+import 'package:eupheus/extensions.dart';
+import 'package:eupheus/cryptocurrency.dart';
 import 'package:flutter/material.dart';
 
 
@@ -124,11 +124,12 @@ class _SearchBarState extends State<SearchBar> {
               },
               style: ElevatedButton.styleFrom(backgroundColor: Color((math.Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(0.6)),
               icon: Icon(topicIcons.values.elementAt(index)), 
-              label: Text(_gridTopics[index],
+              label: FittedBox( fit: BoxFit.cover,
+                child: Text(_gridTopics[index],
                     style: TextStyle(
                         fontFamily: 'Nunito',
                         fontSize: 16.0,
-                        fontWeight: FontWeight.w700)),
+                        fontWeight: FontWeight.w700))),
               ));
   
           },
