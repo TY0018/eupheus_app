@@ -1,6 +1,6 @@
-import 'package:eupheus_app/myplans.dart';
+import 'package:eupheus/myplans.dart';
 import 'package:flutter/material.dart';
-import 'package:eupheus_app/extensions.dart';
+import 'package:eupheus/extensions.dart';
 
 import 'dart:math' as math;
 
@@ -85,6 +85,7 @@ class MyAccount extends StatelessWidget {
                           OutlinedButton(
                               onPressed: () {},
                               style: OutlinedButton.styleFrom(
+                                // minimumSize: Size.fromHeight(50),
                                   foregroundColor: '#8C84EE'.toColor(),
                                   textStyle:
                                       TextStyle(fontWeight: FontWeight.w800),
@@ -96,13 +97,16 @@ class MyAccount extends StatelessWidget {
                                           BorderRadius.circular(16.0)),
                                   padding: EdgeInsets.all(8.0),
                                   alignment: Alignment.center),
-                              child: Row(children: [
+                              child: FittedBox(
+                                fit: BoxFit.contain,
+                                child:Row(children: [
                                 Icon(Icons.add),
                                 Text(" Add Friends")
-                              ])),
+                              ]))),
                           OutlinedButton(
                               onPressed: () {},
                               style: OutlinedButton.styleFrom(
+                                  // minimumSize: Size.fromHeight(50),
                                   foregroundColor: '#8C84EE'.toColor(),
                                   side: BorderSide(color: '#FFA183'.toColor()),
                                   textStyle:
@@ -112,10 +116,12 @@ class MyAccount extends StatelessWidget {
                                           BorderRadius.circular(16.0)),
                                   padding: EdgeInsets.all(8.0),
                                   alignment: Alignment.center),
-                              child: Row(children: [
+                              child: FittedBox(
+                                fit: BoxFit.cover,
+                                child: Row(children: [
                                 Icon(Icons.leaderboard),
                                 Text(" Leaderboard")
-                              ]))
+                              ])))
                         ]),
                   ]),
                   Card(

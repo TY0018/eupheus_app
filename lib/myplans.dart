@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:eupheus_app/extensions.dart';
-import 'package:eupheus_app/me.dart';
+import 'package:eupheus/extensions.dart';
+import 'package:eupheus/me.dart';
 import 'dart:math' as math;
 
 class Myplans extends StatelessWidget {

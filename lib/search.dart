@@ -1,7 +1,7 @@
 import 'dart:math' as math;
 import 'dart:core';
-import 'package:eupheus_app/extensions.dart';
-import 'package:eupheus_app/cryptocurrency.dart';
+import 'package:eupheus/extensions.dart';
+import 'package:eupheus/cryptocurrency.dart';
 import 'package:flutter/material.dart';
 
 

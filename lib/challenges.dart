@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:eupheus_app/extensions.dart';
-import 'package:eupheus_app/quiz_video.dart';
+import 'package:eupheus/extensions.dart';
+import 'package:eupheus/quiz_video.dart';
 import 'dart:math' as math;
 
 class Challenges extends StatelessWidget {
@@ -18,6 +18,7 @@ class Challenges extends StatelessWidget {
         centerTitle: true,
       ),
       body: Container(
+   
         padding: EdgeInsets.all(10.0),
         child: GridView.count(
           crossAxisCount: 2,
@@ -43,6 +44,8 @@ class Challenges extends StatelessWidget {
                         fit: BoxFit.cover,
                         isAntiAlias: true,
                         alignment: Alignment.center,
+                        height: double.infinity,
+                        width: double.infinity
                         ),
                     Align(
                         alignment: Alignment.bottomCenter,

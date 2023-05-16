@@ -1,7 +1,7 @@
-import 'package:eupheus_app/extensions.dart';
+import 'package:eupheus/extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:eupheus_app/explore_video.dart';
-import 'package:eupheus_app/sustainability_video.dart';
+import 'package:eupheus/explore_video.dart';
+import 'package:eupheus/sustainability_video.dart';
 
 class Explore extends StatelessWidget {
   const Explore({super.key});
