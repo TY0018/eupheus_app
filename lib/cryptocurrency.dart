@@ -71,51 +71,50 @@ class _CryptoState extends State<Crypto> {
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               childAspectRatio: 1.5,
               crossAxisCount: 2,
-              crossAxisSpacing: 7.0,
-              mainAxisSpacing: 7.0,
+              crossAxisSpacing: 12.0,
+              mainAxisSpacing: 5
             ),
             delegate: SliverChildBuilderDelegate(
               (context, index) {
                 return Container(
-                  
-                  padding: EdgeInsets.all(8.0),
-                    margin: EdgeInsets.all(8.0),
+                    // margin: EdgeInsets.all(5.0),
+                    // padding: EdgeInsets.all(5.0),
                     child: Column(
-                      children: [
-                      ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const Video()));
-                            },
-                            clipBehavior: Clip.antiAlias,
-                            style: ElevatedButton.styleFrom(
-                              // minimumSize: Size.fromHeight(50),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(16.0)),
-                              padding: EdgeInsets.zero,
-                              foregroundColor: Colors.transparent,
-                              backgroundColor: Colors.transparent
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const Video()));
+                              },
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(16.0)),
+                                padding: EdgeInsets.zero,
+                                foregroundColor: Colors.transparent,
+                                backgroundColor: Colors.transparent,
+                              ),
+                              clipBehavior: Clip.antiAlias,
+                              child: Image(
+                                image:
+                                    AssetImage('images/crypto_thumbnail.png'),
+                                isAntiAlias: true,
+                                fit: BoxFit.cover,
+                                alignment: Alignment.center
+                              ),
                             ),
-                            child: Image.asset('images/crypto_thumbnail.png',
-                            isAntiAlias: true,
-                            width: double.infinity,
-                            // height: double.infinity,
-                            fit: BoxFit.cover),
-                          ),
-                        
-                        FittedBox( fit: BoxFit.scaleDown,
-                          child: Text(
-                          'Introduction to Cryptocurrency',
-                          style: TextStyle(
-                              fontFamily: 'Nunito',
-                              color: '#8C84EE'.toColor(),
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.w700)),
-                        )
-                      ],
-    ));
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child:
+                            Text('Introduction to Cryptocurrency',
+                                style: TextStyle(
+                                    fontFamily: 'Nunito',
+                                    color: '#8C84EE'.toColor(),
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.w700))),
+                          ],
+                        ));
               },
               childCount: 1,
             ),
