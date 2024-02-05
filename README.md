@@ -5,6 +5,9 @@ Frontend demo: A mobile application that promotes learning anytime and anywhere 
 ## Key features
 
 Explore Page: Scrolling of randomised short videos
+
 Search Page: Search for videos in specific categories
+
 Profile Page: Profile page for users to share learning plans with their friends
+
 
